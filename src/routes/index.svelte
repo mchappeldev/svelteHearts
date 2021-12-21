@@ -9,8 +9,8 @@
   <img src="/heart.png" class="headerimg">
   <h1>Svelte Hearts</h1>
 </div>
-<div id="refresh">
-  <img src="{refresh}">
+<div>
+  <img src="{refresh}" id="refresh">
 </div>
 </header>
 
@@ -56,8 +56,7 @@
 
   #refresh {
     padding: 10px;
-
-    height: 32px;
+    height: 50px;
   }
 
 </style>

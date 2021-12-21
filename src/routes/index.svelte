@@ -3,7 +3,9 @@
 </script>
 
 
-<h1>Hello World!</h1>
+<h1>Player Names:</h1>
+
+<h1>Hands:</h1>
 
 
 <style>

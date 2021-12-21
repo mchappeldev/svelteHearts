@@ -20,7 +20,7 @@
 <img src="/heart.png" class="headerimg">
 <input type="text" id="player1Name" name="player1Name" value="Player 1:">
 <h1>{score1}</h1>
-<input bind:value={hand1}>
+<input type="number" bind:value={hand1}>
 
 <input type="text" id="player2Name" name="player2Name" value="Player 2:">
 <h1>{score2}</h1>

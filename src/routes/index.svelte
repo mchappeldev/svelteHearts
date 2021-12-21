@@ -10,7 +10,7 @@
   <h1>Svelte Hearts</h1>
 </div>
 <div>
-  <img src="{refresh}" class="refresh">
+  <img src="{refresh}" id="refresh">
 </div>
 </header>
 
@@ -22,12 +22,19 @@
     width: 100%;
     align: left;
     background: #FF4747;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .headerimg {
     height: 128px;
     top: 10px;
     left: 10px;
+  }
+
+  #refresh {
+    
   }
 
 </style>

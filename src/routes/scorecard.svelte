@@ -47,8 +47,8 @@
   <input type="number" bind:value={hand4}>
 </div>
 
-<button on:click={updateScore}>Submit!</button>
 </div>
+<button on:click={updateScore}>Submit!</button>
 
 <style>
 input {
@@ -65,11 +65,13 @@ input {
 .playerName {
   background: none;
   font-size: 18px;
+  border: none;
 }
 
 .scoreCard {
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+  border-radius: 25px;
 }
 
 </style>

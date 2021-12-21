@@ -94,7 +94,7 @@
   :global(body) {
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
       monospace;
-    background-color: #fafafa;
+    background-color: #000;
     max-width: 650px;
     margin: 32px auto;
     padding: 0 16px;

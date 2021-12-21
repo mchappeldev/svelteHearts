@@ -60,6 +60,7 @@ input {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 20px;
 }
 
 .playerName {
@@ -75,6 +76,10 @@ input {
   height: 250px;
   width: 250px;
   font-family: 'Press Start 2P', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 </style>

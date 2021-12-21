@@ -26,6 +26,7 @@
     flex-direction: row;
     justify-content: space-between;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    align-items: center;
   }
   .logo {
     display: flex;
@@ -41,7 +42,6 @@
   }
 
   #refresh {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     margin: auto;
   }
 

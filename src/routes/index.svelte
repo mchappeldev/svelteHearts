@@ -21,7 +21,6 @@
   header {
     width: 100%;
     height: 100px;
-    align: left;
     background: #FF4747;
     display: flex;
     flex-direction: row;
@@ -35,16 +34,18 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 10px;
+    align-items: center;
   }
 
   .headerimg {
-    height: 128px;
+    height: 64px;
     top: 10px;
     left: 10px;
   }
 
   #refresh {
     margin-right: 10%;
+    height: 64px;
   }
 
 </style>

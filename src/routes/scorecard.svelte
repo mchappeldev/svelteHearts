@@ -87,6 +87,10 @@ input {
   justify-content: center;
 }
 
+scoreCard:hover {
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 23%);
+}
+
 button {
   display: inline-block;
     position: relative;

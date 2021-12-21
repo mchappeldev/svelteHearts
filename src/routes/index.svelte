@@ -52,8 +52,8 @@
   }
 
   #refresh {
-    padding-right: 10%;
-    height: 64px;
+    right: 10px;
+    height: 32px;
   }
 
 </style>

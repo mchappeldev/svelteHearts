@@ -20,6 +20,7 @@
 <style>  
   header {
     width: 100%;
+    height: 100px;
     align: left;
     background: #FF4747;
     display: flex;

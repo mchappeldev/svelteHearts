@@ -18,6 +18,14 @@
 
 
 <style>  
+  :global(body) {
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+      monospace;
+    background-color: #fafafa;
+    max-width: 1080px;
+    margin: 32px auto;
+    padding: 0 16px;
+  }
   header {
     width: 100%;
     height: 100px;

@@ -23,8 +23,7 @@
   :global(body) {
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
       monospace;
-      background: linear-gradient(180deg, #FF7070 0%, #FFA5A5 100%);
-    
+      background: #FF5858;
     margin: 0;
     padding: 0;
   }

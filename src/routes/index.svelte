@@ -18,9 +18,16 @@
 
 
 <style>  
+  header {
+    width: 100%;
+    align: left;
+    background: #FF4747;
+  }
+
   .headerimg {
     height: 128px;
     top: 10px;
     left: 10px;
   }
+
 </style>

@@ -48,7 +48,10 @@
 </div>
 
 </div>
+
+<div class="buttonContainer">
 <button on:click={updateScore}>Submit!</button>
+</div>  
 
 <style>
 input {
@@ -68,6 +71,7 @@ input {
   font-size: 18px;
   border: none;
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .scoreCard {
@@ -109,6 +113,14 @@ button {
     border-radius: 2px;
     transition: all 0.3s ease-out;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 23%);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
 }
 
 </style>

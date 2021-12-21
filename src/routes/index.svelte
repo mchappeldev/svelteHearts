@@ -1,6 +1,12 @@
 <script>
-  let score1 = score2 = score3 = score4 = 0;
-  let hand1 = hand2 = hand3 = hand4 = 0;
+  let score1 = 0;
+  let score2 = 0;
+  let score3 = 0;
+  let score4 = 0;
+  let hand1  = 0;
+  let hand2  = 0;
+  let hand3  = 0;
+  let hand4  = 0;
 
 
   function updateScore() {

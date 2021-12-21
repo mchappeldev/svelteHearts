@@ -25,6 +25,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px;
   }
 
   .headerimg {
@@ -34,7 +41,8 @@
   }
 
   #refresh {
-    
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: auto;
   }
 
 </style>

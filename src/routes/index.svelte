@@ -3,6 +3,7 @@
 </script>
 
 
+<img src="/heart.png" class="headerimg">
 <h1>Player Names:</h1>
 
 <h1>Hands:</h1>
@@ -57,5 +58,8 @@
   }
   .link:hover {
     text-decoration: underline;
+  }
+  .headerimg {
+    height: 128px;
   }
 </style>

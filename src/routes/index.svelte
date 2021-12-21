@@ -36,6 +36,9 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     align-items: center;
   }
+  h1 {
+    padding-left: 10px;
+  }
 
   .logo {
     display: flex;
@@ -52,7 +55,8 @@
   }
 
   #refresh {
-    right: 10px;
+    padding: 10px;
+    
     height: 32px;
   }
 

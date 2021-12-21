@@ -1,12 +1,29 @@
 <script>
+  let score1 = score2 = score3 = score4 = 0;
+  let hand1 = hand2 = hand3 = hand4 = 0;
+
+
+  function updateScore() {
+    score1 = score1 + hand1;
+    hand1 = 0; 
+  }
 
 </script>
 
 
 <img src="/heart.png" class="headerimg">
-<h1>Player Names:</h1>
+<input type="text" id="player1Name" name="player1Name" value="Player 1:">
+<h1>{score1}</h1>
+<input bind:value={hand1}>
 
-<h1>Hands:</h1>
+<input type="text" id="player2Name" name="player2Name" value="Player 2:">
+<h1>{score2}</h1>
+<input type="text" id="player3Name" name="player3Name" value="Player 3:">
+<h1>{score3}</h1>
+<input type="text" id="player4Name" name="player4Name" value="Player 4:">
+<h1>{score4}</h1>
+
+<button on:click={updateScore}>Submit!</button>
 
 
 <style>

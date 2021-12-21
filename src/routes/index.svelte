@@ -22,9 +22,9 @@
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
       monospace;
     background-color: #fafafa;
-    max-width: 1080px;
-    margin: 32px auto;
-    padding: 0 16px;
+    
+    margin: 0;
+    padding: 0;
   }
   header {
     width: 100%;

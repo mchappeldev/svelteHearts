@@ -3,7 +3,9 @@
  let refresh = "./refresh.png";
 </script>
 
-
+<svelte:head>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</svelte:head>
 <header>
   <div class="logo">
   <img src="/heart.png" class="headerimg">
@@ -33,11 +35,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
     align-items: center;
   }
   h1 {
     padding-left: 10px;
+    font-family: 'Press Start 2P', cursive;
   }
 
   .logo {
@@ -55,7 +58,7 @@
   }
 
   #refresh {
-    padding: 10px;
+    padding: 25px;
     height: 50px;
   }
 

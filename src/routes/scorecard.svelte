@@ -67,6 +67,7 @@ input {
   background: none;
   font-size: 18px;
   border: none;
+  text-align: center;
 }
 
 .scoreCard {
@@ -80,6 +81,34 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+button {
+  display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 1.5rem;
+    color: #424242;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.8px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    outline: none;
+    border: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 2px;
+    transition: all 0.3s ease-out;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 23%);
 }
 
 </style>

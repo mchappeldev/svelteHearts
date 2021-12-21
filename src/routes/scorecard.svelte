@@ -63,7 +63,7 @@ input {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin: 50px, 20px;
+  margin: 50px 20px;
 }
 
 .playerName {

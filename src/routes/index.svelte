@@ -4,7 +4,7 @@
 
 
   function updateScore() {
-    score1 = score1 + hand1;
+    score1 += hand1;
     hand1 = 0; 
   }
 

@@ -103,7 +103,7 @@
     letter-spacing: -0.025em;
   }
   h2 {
-    font-size: 18px;
+    font-size: 10px;
   }
   ul {
     list-style: none;

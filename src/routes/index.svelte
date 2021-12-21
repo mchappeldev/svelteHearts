@@ -23,7 +23,7 @@
   :global(body) {
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
       monospace;
-      background: #FF5858;
+      background: #ffbdbd;
     margin: 0;
     padding: 0;
   }
@@ -60,5 +60,7 @@
     padding: 25px;
     height: 50px;
   }
-
+button {
+  
+}
 </style>

@@ -60,7 +60,5 @@
     padding: 25px;
     height: 50px;
   }
-button {
-  
-}
+
 </style>

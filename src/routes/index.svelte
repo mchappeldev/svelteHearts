@@ -52,7 +52,7 @@
   }
 
   #refresh {
-    margin-right: 10%;
+    padding-right: 10%;
     height: 64px;
   }
 

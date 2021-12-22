@@ -1,5 +1,6 @@
-<script>
+<script context="module">
   import Scorecard from './scorecard.svelte';
+  let resetScore;
   let refresh = './refresh.png';
 </script>
 
@@ -15,11 +16,11 @@
     <h1>Svelte Hearts</h1>
   </div>
   <div>
-    <img src={refresh} id="refresh" />
+    <img src={refresh} id="refresh" on:click={resetScore} />
   </div>
 </header>
 
-<Scorecard />
+<Scorecard bind:resetScore />
 
 <style>
   :global(body) {

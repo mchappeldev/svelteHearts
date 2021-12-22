@@ -1,66 +1,123 @@
 <script>
-  let score1 = 0;
-  let score2 = 0;
-  let score3 = 0;
-  let score4 = 0;
-  let hand1 = null;
-  let hand2 = null;
-  let hand3 = null;
-  let hand4 = null;
-  let player1 = 'Player 1';
-  let player2 = 'Player 2';
-  let player3 = 'Player 3';
-  let player4 = 'Player 4';
+  const players = {
+    p1: { score: 0, hand: 0, playerName: 'Player 1' },
+    p2: { score: 0, hand: 0, playerName: 'Player 2' },
+    p3: { score: 0, hand: 0, playerName: 'Player 3' },
+    p4: { score: 0, hand: 0, playerName: 'Player 4' }
+  };
 
-  $: totalHand = hand1 + hand2 + hand3 + hand4;
-  $: if (hand1 + hand2 + hand3 + hand4 === 26) {
-    if (!hand1) {
-      hand1 = 0;
+  $: totalHand =
+    players.p1.hand + players.p2.hand + players.p3.hand + players.p4.hand;
+  $: if (
+    players.p1.hand + players.p2.hand + players.p3.hand + players.p4.hand ===
+    26
+  ) {
+    if (!players.p1.hand) {
+      players.p1.hand = 0;
     }
   }
-  $: if (hand1 > 26 - totalHand + hand1) {
+  $: if (players.p1.hand > 26 - totalHand + players.p1.hand) {
     alert("you can't do that idiot!");
   }
 
   function updateScore() {
-    score1 += hand1;
-    score2 += hand2;
-    score3 += hand3;
-    score4 += hand4;
-    hand1 = null;
-    hand2 = null;
-    hand3 = null;
-    hand4 = null;
+    if (totalHand == 26) {
+      players.p1.score += players.p1.hand;
+      players.p2.score += players.p2.hand;
+      players.p3.score += players.p3.hand;
+      players.p4.score += players.p4.hand;
+      players.p1.hand = 0;
+      players.p2.hand = 0;
+      players.p3.hand = 0;
+      players.p4.hand = 0;
+    } else {
+      alert('Hands must total 26!');
+    }
+  }
+
+  export function resetScore() {
+    players.p1.score =
+      players.p2.score =
+      players.p3.score =
+      players.p4.score =
+        0;
   }
 </script>
 
 <div class="main">
   <div class="scoreCard">
-    <input type="text" class="playerName" bind:value={player1} />
-    <h1>{score1}</h1>
-    <input type="number" bind:value={hand1} max={26 - totalHand + hand1} />
+    <div class="scoreCardInner">
+      <input
+        type="text"
+        class="playerName"
+        bind:value={players.p1.playerName}
+      />
+      <h1>{players.p1.score}</h1>
+    </div>
+    <div class="scoreCardInner">
+      <input
+        type="number"
+        bind:value={players.p1.hand}
+        max={26 - totalHand + players.p1.hand}
+      />
+    </div>
   </div>
 
   <div class="scoreCard">
-    <input type="text" class="playerName" bind:value={player2} />
-    <h1>{score2}</h1>
-    <input type="number" bind:value={hand2} max={26 - totalHand + hand2} />
+    <div class="scoreCardInner">
+      <input
+        type="text"
+        class="playerName"
+        bind:value={players.p2.playerName}
+      />
+      <h1>{players.p2.score}</h1>
+    </div>
+    <div class="scoreCardInner">
+      <input
+        type="number"
+        bind:value={players.p2.hand}
+        max={26 - totalHand + players.p2.hand}
+      />
+    </div>
   </div>
 
   <div class="scoreCard">
-    <input type="text" class="playerName" bind:value={player3} />
-    <h1>{score3}</h1>
-    <input type="number" bind:value={hand3} max={26 - totalHand + hand3} />
+    <div class="scoreCardInner">
+      <input
+        type="text"
+        class="playerName"
+        bind:value={players.p3.playerName}
+      />
+      <h1>{players.p3.score}</h1>
+    </div>
+
+    <div class="scoreCardInner">
+      <input
+        type="number"
+        bind:value={players.p3.hand}
+        max={26 - totalHand + players.p3.hand}
+      />
+    </div>
   </div>
 
   <div class="scoreCard">
-    <input type="text" class="playerName" bind:value={player4} />
-    <h1>{score4}</h1>
-    <input type="number" bind:value={hand4} max={26 - totalHand + hand4} />
+    <div class="scoreCardInner">
+      <input
+        type="text"
+        class="playerName"
+        bind:value={players.p4.playerName}
+      />
+      <h1>{players.p4.score}</h1>
+    </div>
+    <div class="scoreCardInner">
+      <input
+        type="number"
+        bind:value={players.p4.hand}
+        max={26 - totalHand + players.p4.hand}
+      />
+    </div>
   </div>
 </div>
-
-<h1>{totalHand}</h1>
 
 <div class="buttonContainer">
   <button on:click={updateScore}>Submit!</button>
@@ -71,6 +128,9 @@
     background: none;
     font-size: 18px;
     border: none;
+    text-align: center;
+    font-family: 'Paytone One', sans-serif;
+    width: 90%;
   }
 
   .main {
@@ -92,35 +152,48 @@
   }
 
   .scoreCard {
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
-    border-radius: 10px;
-    font-family: 'Press Start 2P', cursive;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease-out;
     margin: 10px;
-    width: 250px;
+    width: 150px;
+    height: 220px;
     flex-shrink: 1;
     flex-grow: 1;
+    overflow: hidden;
   }
 
-  .scoreCard:hover {
-    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 23%);
+  .scoreCardInner:hover {
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 23%);
+  }
+
+  .scoreCardInner {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   h1 {
     font-size: 50px;
+    font-family: 'Paytone One', sans-serif;
+    margin: 10px;
   }
 
   button {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    height: 35px;
-    line-height: 35px;
+    height: 50px;
+    line-height: 50px;
     padding: 0 1.5rem;
     color: #424242;
     font-size: 15px;

@@ -1,45 +1,50 @@
 <script>
- import Scorecard from './scorecard.svelte';
- let refresh = "./refresh.png";
+  import Scorecard from './scorecard.svelte';
+  let refresh = './refresh.png';
 </script>
 
 <svelte:head>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+    rel="stylesheet"
+  />
 </svelte:head>
 <header>
   <div class="logo">
-  <img src="/heart.png" class="headerimg">
-  <h1>Svelte Hearts</h1>
-</div>
-<div>
-  <img src="{refresh}" id="refresh">
-</div>
+    <img src="/heart.png" class="headerimg" />
+    <h1>Svelte Hearts</h1>
+  </div>
+  <div>
+    <img src={refresh} id="refresh" />
+  </div>
 </header>
 
-  <Scorecard/>
+<Scorecard />
 
-
-<style>  
+<style>
   :global(body) {
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
       monospace;
-      background: #ffbdbd;
+    background: #ffbdbd;
     margin: 0;
     padding: 0;
+    width: 100%;
   }
   header {
     width: 100%;
     height: 100px;
-    background: #FF4747;
+    background: #000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
     align-items: center;
+    background-size: contain;
   }
   h1 {
     padding-left: 10px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Paytone One', sans-serif;
+    color: white;
   }
 
   .logo {
@@ -60,5 +65,7 @@
     padding: 25px;
     height: 50px;
   }
-
+  #svelte {
+    width: 100%;
+  }
 </style>

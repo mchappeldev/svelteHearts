@@ -36,7 +36,11 @@
   }
 
   export function resetScore() {
-    players.p1.score =
+    players.p1.hand =
+      players.p2.hand =
+      players.p3.hand =
+      players.p4.hand =
+      players.p1.score =
       players.p2.score =
       players.p3.score =
       players.p4.score =

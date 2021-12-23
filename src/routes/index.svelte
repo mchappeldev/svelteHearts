@@ -26,7 +26,7 @@
   :global(body) {
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
       monospace;
-    background: #ffbdbd;
+    background: url(wave.png), #ff0000;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -65,8 +65,5 @@
   #refresh {
     padding: 25px;
     height: 50px;
-  }
-  #svelte {
-    width: 100%;
   }
 </style>

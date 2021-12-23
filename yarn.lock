@@ -183,6 +183,11 @@
   "resolved" "https://registry.npmjs.org/svelte-hmr/-/svelte-hmr-0.14.6.tgz"
   "version" "0.14.6"
 
+"svelte-range-slider-pips@^2.0.0":
+  "integrity" "sha512-Gsjznv437zHD3HJtwJ4xODoFssLWiQZ0jGuNI6n3dw2rfiRPddW+0fT8ue0FKSwqCG4QTLKcXFsS01lhYjGOQw=="
+  "resolved" "https://registry.npmjs.org/svelte-range-slider-pips/-/svelte-range-slider-pips-2.0.0.tgz"
+  "version" "2.0.0"
+
 "svelte@^3.2.0", "svelte@^3.34.0", "svelte@^3.38.3", "svelte@>=3.19.0":
   "integrity" "sha512-N7bBZJH0iF24wsalFZF+fVYMUOigaAUQMIcEKHO3jstK/iL8VmP9xE+P0/a76+FkNcWt+TDv2Gx1taUoUscrvw=="
   "resolved" "https://registry.npmjs.org/svelte/-/svelte-3.38.3.tgz"

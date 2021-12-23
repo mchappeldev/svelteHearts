@@ -9,7 +9,8 @@
   "devDependencies": {
     "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": "next",
-    "svelte": "^3.38.3"
+    "svelte": "^3.38.3",
+    "svelte-range-slider-pips": "^2.0.0"
   },
   "dependencies": {
     "prettier": "^2.3.2",

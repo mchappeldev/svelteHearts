@@ -26,7 +26,7 @@
   :global(body) {
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
       monospace;
-    background: url('./wave.png'), #ff0000;
+    background: url('/static/wave.png'), #d85454;
     margin: 0;
     padding: 0;
     width: 100%;

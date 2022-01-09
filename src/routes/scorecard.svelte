@@ -56,6 +56,7 @@
       players.p3.score =
       players.p4.score =
         0;
+    lowScore = Infinity;
   }
 
   export function resetHand() {

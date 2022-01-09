@@ -181,7 +181,6 @@
     height: 220px;
     flex-shrink: 1;
     flex-grow: 1;
-    overflow: hidden;
   }
 
   .scoreCardUpper:hover {

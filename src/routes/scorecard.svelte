@@ -3,16 +3,17 @@
 
   //Object Creation
   const players = {
-    p1: { score: 0, hand: 0, playerName: 'Player 1' },
-    p2: { score: 0, hand: 0, playerName: 'Player 2' },
-    p3: { score: 0, hand: 0, playerName: 'Player 3' },
-    p4: { score: 0, hand: 0, playerName: 'Player 4' }
+    p1: { score: 0, hand: 0, name: 'Player 1' },
+    p2: { score: 0, hand: 0, name: 'Player 2' },
+    p3: { score: 0, hand: 0, name: 'Player 3' },
+    p4: { score: 0, hand: 0, name: 'Player 4' }
   };
   let totalHand = 0;
-  let lowScore = Infinity;
+
   //Reactive Statements
   $: totalHand =
     players.p1.hand + players.p2.hand + players.p3.hand + players.p4.hand;
+
   //Winning the Game
   $: if (
     players.p1.score > 100 ||
@@ -20,17 +21,17 @@
     players.p3.score > 100 ||
     players.p4.score > 100
   ) {
+    let lowScore = Infinity;
     for (var i in players) {
       if (players[i].score < lowScore) {
         lowScore = players[i].score;
-        var key = i;
+        var winners = players[i].name;
       } else if (players[i].score == lowScore) {
-        alert('We have a tie!');
-        var key = 'Nobody';
-        break;
+        var tiedWinner = players[i].name;
+        var winners = winners + ' and ' + players[i].name;
       }
     }
-    alert('Winner is ' + key + '!');
+    alert('Winner is ' + winners + '!');
   }
 
   //Functions
@@ -56,7 +57,6 @@
       players.p3.score =
       players.p4.score =
         0;
-    lowScore = Infinity;
   }
 
   export function resetHand() {
@@ -79,11 +79,7 @@
       for (var i in players) {
         if (players[i] != player) {
           players[i].score += 26;
-          players.p1.hand =
-            players.p2.hand =
-            players.p3.hand =
-            players.p4.hand =
-              0;
+          resetHand();
         }
       }
       return;
@@ -95,9 +91,9 @@
     updateHands();
   }
 
-  function validateInput(obj) {
-    if (obj.hand > pointsRemaining(obj.hand)) {
-      obj.hand = pointsRemaining(obj.hand);
+  function validateInput(player) {
+    if (player.hand > pointsRemaining(player.hand)) {
+      player.hand = pointsRemaining(player.hand);
     }
     updateHands();
   }
@@ -107,7 +103,7 @@
   {#each Object.entries(players) as [label, player]}
     <div class="scoreCard">
       <div class="scoreCardUpper">
-        <input type="text" class="playerName" bind:value={player.playerName} />
+        <input type="text" class="playerName" bind:value={player.name} />
         <h1>{player.score}</h1>
       </div>
       <div class="scoreCardLower">
@@ -119,6 +115,7 @@
         >
         <input
           type="number"
+          class={totalHand === 26 ? 'grey' : ''}
           on:change={() => validateInput(player)}
           bind:value={player.hand}
           max={pointsRemaining(player.hand)}
@@ -150,6 +147,10 @@
     font-family: 'Paytone One', sans-serif;
     width: 90%;
     margin: 5px;
+  }
+
+  .grey {
+    background: #ccc;
   }
 
   .main {

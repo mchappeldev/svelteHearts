@@ -13,6 +13,8 @@
   let celebration = false;
   var winners;
   var tiedWinner;
+  var hand = 1;
+  const scoreBook = new Map();
 
   //Reactive Statements
   $: totalHand =
@@ -41,11 +43,25 @@
   //Functions
   function updateScore() {
     if (totalHand == 26) {
+      //Add the current hand to the players score.
       players.p1.score += players.p1.hand;
       players.p2.score += players.p2.hand;
       players.p3.score += players.p3.hand;
       players.p4.score += players.p4.hand;
-      players.p1.hand = players.p2.hand = players.p3.hand = players.p4.hand = 0;
+
+      //record the current score in the scorebook
+      let currentHand = [
+        players.p1.score,
+        players.p2.score,
+        players.p3.score,
+        players.p4.score
+      ];
+      scoreBook.set(hand, currentHand);
+      scoreBook = scoreBook;
+      hand++;
+
+      //reset
+      resetHand();
     } else {
       alert('Hands must total 26!');
     }
@@ -63,6 +79,9 @@
         0;
     celebration = false;
     tiedWinner = false;
+    scoreBook.clear();
+    scoreBook = scoreBook;
+    hand = 1;
   }
 
   export function resetHand() {
@@ -155,6 +174,24 @@
   Total: {totalHand} <br />
   <br /><button on:click={updateScore}>Submit!</button>
   <button on:click={resetHand}>Reset Hand</button>
+</div>
+
+<div class="scoreBookCont">
+  <table class="scoreBook">
+    <tr>
+      <th>Hand</th>
+      <th>{players.p1.name}</th>
+      <th>{players.p2.name}</th>
+      <th>{players.p3.name}</th>
+      <th>{players.p4.name}</th>
+    </tr>
+    {#each [...scoreBook] as [key, value]}
+      <tr transition:fade|local>
+        <td>{key}:</td>
+        {#each value as hand}<td>{hand}</td>{/each}
+      </tr>
+    {/each}
+  </table>
 </div>
 
 <style>
@@ -344,5 +381,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .scoreBook {
+    margin-top: 15px;
+    background: white;
+    width: 75%;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .scoreBookCont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
   }
 </style>

@@ -1,5 +1,6 @@
 <script context="module">
   import Scorecard from './scorecard.svelte';
+
   let resetScore;
   let refresh = './refresh.png';
 </script>

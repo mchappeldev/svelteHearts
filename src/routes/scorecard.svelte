@@ -9,6 +9,9 @@
     p4: { score: 0, hand: 0, name: 'Player 4' }
   };
   let totalHand = 0;
+  let celebration = false;
+  var winners;
+  var tiedWinner;
 
   //Reactive Statements
   $: totalHand =
@@ -25,13 +28,13 @@
     for (var i in players) {
       if (players[i].score < lowScore) {
         lowScore = players[i].score;
-        var winners = players[i].name;
+        winners = players[i].name;
       } else if (players[i].score == lowScore) {
-        var tiedWinner = players[i].name;
-        var winners = winners + ' and ' + players[i].name;
+        tiedWinner = true;
+        winners = winners + ' and ' + players[i].name;
       }
     }
-    alert('Winner is ' + winners + '!');
+    celebration = true;
   }
 
   //Functions
@@ -57,6 +60,8 @@
       players.p3.score =
       players.p4.score =
         0;
+    celebration = false;
+    tiedWinner = false;
   }
 
   export function resetHand() {
@@ -100,6 +105,20 @@
 </script>
 
 <div class="main">
+  {#if celebration == true}
+    <div class="greybg">
+      <div class="messageBox">
+        <h1>Victory!</h1>
+        {#if tiedWinner == true}
+          <p>The Winners are {winners}!</p>
+        {:else}
+          <p>The Winner is {winners}!</p>
+        {/if}
+        <button on:click={resetScore}>Restart?</button>
+        <button>View Scorecard</button>
+      </div>
+    </div>
+  {/if}
   {#each Object.entries(players) as [label, player]}
     <div class="scoreCard">
       <div class="scoreCardUpper">
@@ -302,5 +321,27 @@
   /* Firefox */
   input[type='number'] {
     -moz-appearance: textfield;
+  }
+
+  .greybg {
+    background: rgba(70, 70, 70, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 25;
+  }
+  .messageBox {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 </style>

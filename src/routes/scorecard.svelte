@@ -42,29 +42,25 @@
 
   //Functions
   function updateScore() {
-    if (totalHand == 26) {
-      //Add the current hand to the players score.
-      players.p1.score += players.p1.hand;
-      players.p2.score += players.p2.hand;
-      players.p3.score += players.p3.hand;
-      players.p4.score += players.p4.hand;
+    //Add the current hand to the players score.
+    players.p1.score += players.p1.hand;
+    players.p2.score += players.p2.hand;
+    players.p3.score += players.p3.hand;
+    players.p4.score += players.p4.hand;
 
-      //record the current score in the scorebook
-      let currentHand = [
-        players.p1.score,
-        players.p2.score,
-        players.p3.score,
-        players.p4.score
-      ];
-      scoreBook.set(hand, currentHand);
-      scoreBook = scoreBook;
-      hand++;
+    //record the current score in the scorebook
+    let currentHand = [
+      players.p1.score,
+      players.p2.score,
+      players.p3.score,
+      players.p4.score
+    ];
+    scoreBook.set(hand, currentHand);
+    scoreBook = scoreBook;
+    hand++;
 
-      //reset
-      resetHand();
-    } else {
-      alert('Hands must total 26!');
-    }
+    //reset
+    resetHand();
   }
 
   export function resetScore() {
@@ -103,10 +99,13 @@
     if (amount == 26) {
       for (var i in players) {
         if (players[i] != player) {
-          players[i].score += 26;
-          resetHand();
+          players[i].hand = 26;
+        } else {
+          players[i].hand = 0;
         }
       }
+      updateScore();
+      resetHand();
       return;
     }
 
@@ -172,7 +171,9 @@
 
 <div class="buttonContainer">
   Total: {totalHand} <br />
-  <br /><button on:click={updateScore}>Submit!</button>
+  <br /><button on:click={updateScore} disabled={totalHand != 26}
+    >Submit!</button
+  >
   <button on:click={resetHand}>Reset Hand</button>
 </div>
 
@@ -185,10 +186,10 @@
       <th>{players.p3.name}</th>
       <th>{players.p4.name}</th>
     </tr>
-    {#each [...scoreBook] as [key, value]}
+    {#each [...scoreBook] as [hand, scores]}
       <tr transition:fade|local>
-        <td>{key}:</td>
-        {#each value as hand}<td>{hand}</td>{/each}
+        <td>{hand}:</td>
+        {#each scores as score}<td>{score}</td>{/each}
       </tr>
     {/each}
   </table>

@@ -14,7 +14,7 @@
   var winners;
   var tiedWinner;
   var hand = 1;
-  const scoreBook = new Map();
+  var scoreBook = new Map();
 
   //Reactive Statements
   $: totalHand =

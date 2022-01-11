@@ -1,5 +1,6 @@
 <script>
   import { each } from 'svelte/internal';
+  import { fade, blur, fly, slide, scale } from 'svelte/transition';
 
   //Object Creation
   const players = {
@@ -106,8 +107,8 @@
 
 <div class="main">
   {#if celebration == true}
-    <div class="greybg">
-      <div class="messageBox">
+    <div transition:fade class="greybg">
+      <div transition:scale class="messageBox">
         <h1>Victory!</h1>
         {#if tiedWinner == true}
           <p>The Winners are {winners}!</p>

@@ -390,6 +390,7 @@
     width: 75%;
     border-radius: 5px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
   }
 
   .scoreBookCont {
@@ -398,6 +399,5 @@
     justify-content: center;
     width: 100%;
     height: 500px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
   }
 </style>
